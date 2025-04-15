@@ -1,7 +1,7 @@
 import { MatchThree } from "./match-three.js";
 var WebApp = window.Telegram.WebApp;
 
-WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+WebApp.sendData("wioerhioehrgoiherg");
 
 let duration = 12;
 let gameInstance;
