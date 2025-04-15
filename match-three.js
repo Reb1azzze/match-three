@@ -31,9 +31,6 @@ export class MatchThree {
       board.style.pointerEvents = 'none';
       board.style.opacity = '0.5';
     }
-    var WebApp = window.Telegram.WebApp;
-
-    WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
 
     if (window.Telegram && Telegram.WebApp) {
       Telegram.WebApp.sendData(JSON.stringify({ score: this.game.score }));
