@@ -2,7 +2,7 @@ import { MatchThree } from "./match-three.js";
 var WebApp = window.Telegram.WebApp;
 
 WebApp.sendData("wioerhioehrgoiherg");
-
+console.log('wefwef',window.Telegram.WebApp.initDataUnsafe);
 let duration = 12;
 let gameInstance;
 const timerElement = document.getElementById('timer')
