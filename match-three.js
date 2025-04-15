@@ -26,7 +26,7 @@ export class MatchThree {
 
   stopGame() {
     this.isGameOver = true;
-    const board = document.querySelector('.board');
+    const board = document.querySelector('.wrap');
     if (board) {
       board.style.pointerEvents = 'none';
       board.style.opacity = '0.5';
