@@ -1,6 +1,6 @@
 import { MatchThree } from "./match-three.js";
 
-let duration = 300;
+let duration = 12;
 let gameInstance;
 const timerElement = document.getElementById('timer')
 
