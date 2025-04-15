@@ -14,11 +14,25 @@ body {
   background-color: #353535;
 }
 
-.score {
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  gap: 100px;
+}
+
+.score {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  color: #FFFFE0;
+}
+
+.timer {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 48px;
   color: #FFFFE0;

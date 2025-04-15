@@ -23,4 +23,17 @@ export class MatchThree {
   updateScore() {
     document.querySelector(".score").innerHTML = this.game.score;
   }
+
+  stopGame() {
+    this.isGameOver = true;
+    const board = document.querySelector('.board');
+    if (board) {
+      board.style.pointerEvents = 'none';
+      board.style.opacity = '0.5';
+    }
+
+    if (window.Telegram && Telegram.WebApp) {
+      Telegram.WebApp.sendData(JSON.stringify({ score: this.game.score }));
+    }
+  }
 }
