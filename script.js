@@ -4,8 +4,6 @@ let duration = 12;
 let gameInstance;
 const timerElement = document.getElementById('timer')
 
-logToScreen("initData: " + JSON.stringify(Telegram.WebApp.initDataUnsafe));
-
 function startGame() {
 	gameInstance = new MatchThree(8, 8, 7);
 }
@@ -24,14 +22,6 @@ function updateTimer() {
 		gameInstance.stopGame();
 	}
 }
-
-function logToScreen(message) {
-	const logDiv = document.querySelector('#log');
-	if (logDiv) {
-		logDiv.innerText += `\n${message}`;
-	}
-}
-
 
 updateTimer();
 const timerInterval = setInterval(updateTimer, 1000);
