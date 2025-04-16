@@ -31,7 +31,6 @@ export class MatchThree {
       board.style.pointerEvents = 'none';
       board.style.opacity = '0.5';
     }
-
     Telegram.WebApp.sendData(JSON.stringify({ score: this.game.score }));
   }
 }

@@ -2,11 +2,14 @@ import { MatchThree } from "./match-three.js";
 
 let duration = 12;
 let gameInstance;
-const timerElement = document.getElementById('timer')
+const timerElement = document.getElementById('timer');
 let tg = window.Telegram.WebApp;
 tg.expand();
+
 function startGame() {
 	gameInstance = new MatchThree(8, 8, 7);
+	updateTimer();
+	timerInterval = setInterval(updateTimer, 1000);
 }
 
 function updateTimer() {
@@ -24,6 +27,9 @@ function updateTimer() {
 	}
 }
 
-updateTimer();
-const timerInterval = setInterval(updateTimer, 1000);
-startGame();
+let timerInterval;
+
+document.getElementById("startBtn").addEventListener("click", () => {
+	document.getElementById("startOverlay").style.display = "none";
+	startGame();
+});
