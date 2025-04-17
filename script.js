@@ -1,6 +1,6 @@
 import { MatchThree } from "./match-three.js";
 
-let duration = 12;
+let duration = 30;
 let gameInstance;
 const timerElement = document.getElementById('timer');
 let tg = window.Telegram.WebApp;
