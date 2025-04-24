@@ -1,6 +1,19 @@
 import { Game } from "./game.js";
 import { Grid } from "./grid.js";
 
+const PRIZES = {
+  1: "🎁 Сертификат на 500₽",
+  2: "🎁 Сертификат на 1000₽",
+  3: "🎁 Сертификат на 1500₽",
+  4: "🎁 Сертификат на 2000₽",
+  5: "🎁 Сертификат на 2500₽",
+  6: "🎁 Сертификат на 3000₽",
+  7: "🎁 Сертификат на 3500₽",
+  8: "🎁 Сертификат на 4000₽",
+  9: "🎁 Сертификат на 4500₽",
+  10: "🏆 Сертификат на 5000₽ — ты чемпион!"
+};
+
 export class MatchThree {
   wrap = document.querySelector(".wrap");
 
@@ -31,6 +44,17 @@ export class MatchThree {
       board.style.pointerEvents = 'none';
       board.style.opacity = '0.5';
     }
-    Telegram.WebApp.sendData(JSON.stringify({ score: this.game.score }));
+    const score = this.game.score;
+    const level = Math.floor(score / 10);
+    const prize = PRIZES[level] || "Попробуй ещё раз, и ты обязательно выиграешь!";
+
+    document.getElementById('finalScore').textContent = `Вы набрали ${score} очков`;
+    document.getElementById('finalPrize').textContent = `Ваш приз: ${prize}`;
+
+    const endOverlay = document.getElementById('endOverlay');
+    endOverlay.style.display = 'flex';
+
+    // Убираем отправку данных в Telegram
+    // Telegram.WebApp.sendData(JSON.stringify({ score: this.game.score }));
   }
 }
